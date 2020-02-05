@@ -1,0 +1,14 @@
+server:
+  port: 8083
+
+micro:
+  service:
+    endpoint: http://localhost:${wiremock.server.port}
+  validation:
+    endpoint: http://localhost:${wiremock.server.port}/validate
+
+resilience4j.retry:
+  instances:
+    validate:
+      maxRetryAttempts: 3
+      waitDuration: 10s

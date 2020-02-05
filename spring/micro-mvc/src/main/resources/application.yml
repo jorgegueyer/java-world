@@ -1,0 +1,14 @@
+server:
+  port: 8083
+
+micro:
+  service:
+    endpoint: http://localhost:8082
+  validation:
+    endpoint: http://localhost:8082
+
+resilience4j.retry:
+  instances:
+    validate:
+      maxRetryAttempts: 3
+      waitDuration: 10s

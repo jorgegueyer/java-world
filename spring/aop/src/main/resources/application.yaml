@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: micro-aop
+
+server:
+  port: 8080
+
+debug: false
